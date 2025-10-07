@@ -1,0 +1,93 @@
+Javascript Execution Context?
+defines how files are executed in Javascript.
+
+Javascript is single threaded, everything is a Process here.
+
+We have 2 execution contexts:
+1. Global EC - it holds the 'this' keyword. for browser, the global EC.this contains Window Object.
+2. Functional EC 
+3. Eval EC - it is a property of Global EC
+
+we have a js code suppose 
+{}
+phases?
+1. Memory Creation phases - only memory is allocated for all the variables and everything
+2. Execution phase 
+
+Example of js for understanding
+let val1 = 10
+let val2 = 5
+function addNum(num1, num2){
+    let total = num1 + num2
+    return total
+}
+let result1 = addNum(val1, val2)
+let result2 = addNum(10,2)
+
+Now lets understand how all of this executes?
+Steps
+1. First we have Global EC/ Global Environment, and this is allocated in 'this' keyword
+2. Memory Creation Phase : All variables are identified and their values are set to undefined
+val1 = undefined
+val2 = undefined
+addNum = definition of function 
+result1 = undefined
+result2 = undefined
+
+this was cycle 1
+
+now comes 
+3. Execution Phase
+values are allocated to 
+val1,
+val2
+addNum = definition of function
+result1 now calls addNum 
+
+NOW 
+addNum creates its own Executional context 
+
+[
+new varible environment
++
+execution thread
+]
+
+the number of times the functions are executed, new Executional contexts are created
+thread? gets the job done.
+
+now for the new Executional Context(addNum), 
+new Memory Phase is created
+val1 = undefined //given in arguments
+val2 = undefined //given in arguments
+total = undefined
+
+now for the Executional Context(aadNum){
+    num1 = 10
+    num2 = 5
+    total = 15
+}
+now, the total value is returned, where?
+the Total is retured in Global EC.
+
+when the work of Executional Context (addNum)
+is done
+its dusted, deleted.
+
+now result1 = 15;
+ now for result2 
+ new executional context is made
+ [
+    new variable environment
+    +
+    thread
+ ]
+
+ now a new memory phase is made and repeated.
+
+CALL STACK?
+a stack is made
+bottom of stack = Global EC
+then on top of it, fun1
+if fun1 calls fun2
+fun2 will be on top of fun1
