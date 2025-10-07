@@ -41,15 +41,32 @@ let users =[
     {}
 ]
 
-console.log(users[0])
-console.log(Object.keys(users))
+// console.log(users[0])
+// console.log(Object.keys(users))
 
-console.log(Object.keys(newUser))
-console.log(Object.values(newUser))
-console.log(Object.entries(newUser)) //creates an array of each key-value pair
+// console.log(Object.keys(newUser))
+// console.log(Object.values(newUser))
+// console.log(Object.entries(newUser)) //creates an array of each key-value pair
 
 ///when we fetch from a database, sometimes the value doesnt exist, to check?
-console.log(newUser.hasOwnProperty('isLoggedin'))
+// console.log(newUser.hasOwnProperty('isLoggedin'))
+
+const course = {
+    cname : "JavaScript beginner course",
+    price : "999" ,
+    courseMentor : "SteveJobs"
+}
+
+//now to access courseMentor?
+course.courseMentor //-> correct syntax
+
+const {courseMentor} = course; //effective if we use course.courseMentor like 5 times, 10 times.
+
+console.log(courseMentor);
+
+const {courseMentor : tutor} = course ; // this is known as de structuring the object
+
+console.log(tutor);
 
 
 
