@@ -1,0 +1,33 @@
+{
+  "name": "javascript-learning",
+  "version": "1.0.0",
+  "description": "A comprehensive collection of JavaScript learning materials, examples, and practice exercises",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "basics": "node 01_basics/01_variables.js",
+    "start": "echo \"Choose a specific file to run, e.g., npm run basics\"",
+    "run-all-basics": "for file in 01_basics/*.js; do echo \"Running $file:\"; node \"$file\"; echo \"\\n---\\n\"; done"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsrat17/Js-learning.git"
+  },
+  "keywords": [
+    "javascript",
+    "learning",
+    "tutorial",
+    "examples",
+    "practice",
+    "fundamentals"
+  ],
+  "author": "Rachit Balliyan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itsrat17/Js-learning/issues"
+  },
+  "homepage": "https://github.com/itsrat17/Js-learning#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
