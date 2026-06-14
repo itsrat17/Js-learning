@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class =bg-black >
+    <div class = "bg-black">
+        <h1 class = "heading" id = "title"> DOM learning on Chai aur code<span style = "display: none;"> testing text</span></h1>
+        <p>Lorem ipsum dolor sit amet consectetur</p>
+        <ul>
+        <li class name = "list-item">one</li>
+        <li class name = "list-item">two</li> 
+        <li class name = "list-item">three</li>
+        <li class name = "list-item">four</li>
+    </ul>
+</div>
+</body>
+</html>
+
+<!--
+        getElementById()
+        getAttribute('id')
+        setAttribute('class', 'test') it always overwrites the previous attribute
+        we can also style in DOM, const title = getEBI.id(title)
+        title.style.backgroundColor = green 
+        innerText - shows the text that is on the display
+        textContent - shows the entire text, even if it is display :none 
+        innerHTML - gives whole HTML value in it
+        querySelector - returns the first query
+        querySelectorAll
+        in querySelector, to select id use #, to select class use .
+        to select paragraph's attribute for example, use p[type ="password"]
+        to select child and parent, document.querySelector('p:first-child')
+        in querySelector, all CSS Selectors can be used with the same syntax
+
+        now lets assume we need to change the first list item'bg to green
+        how can we do that?
+        document.querySelector('ul')
+        const myul = document.querySelector('ul')
+        myul.querySelector('li')
+        const turnGreen = myul.querySelector('li')
+        turnGreen.style.backgroundColor = "green"
+        turnGreen.innerText = "five"
+
+        document.querySelectorAll('li')
+        const tempLiList = document.querySelectorAll('li')
+        now the templist we got it,
+        NODELIST, not an Array
+
+        What is a nodelist?
+        tempLiList[0].style.backgroundColor = "green"
+        in nodelist, we have to specify the index
+
+        to iterate tempLiList, we have forEach
+        tempLiList.forEach(function (l){
+        l.style.backgroundColor = 'green'})
+
+        now to select class list-item
+        const tempClassList = document.getElementByClassName('list-item')
+
+        it returns an HTML Collection, here forEach doesnt work and there is no as such looping mechanism
+
+        now to use the functions such as forEach, we make it an Array
+
+        how to make it an Array?
+        Array.from(tempClassList)
+        now you can use forEach, map, reduce etc
+
+        const myConvertedClassList = Array.from(tempClassList)
+
+        myConvertedClassList.forEach(function(li){
+        li.style.color = 'orange'})
+ -->
+
+

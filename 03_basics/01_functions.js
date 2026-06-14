@@ -55,30 +55,17 @@
 //here is the fix -> REST operator (...) 
 // ... is the rest operator as well as spread operator. depends on its use case if it is rest or spread operator.
 
-// function calculateCartPrice(...num1){
-//     return num1;
-// }
-
-// console.log(calculateCartPrice(200,400,500,2000)) //it returns an array with all the values, iterate and calculate the sum.
-
-// const user = {
-//     username : "rachit",
-//     price : 999
-// }
-
-function handleObject(anyObject){
-    console.log(`username is ${anyObject.username} and total is ${anyObject.price}`)
+function calculateCartPrice(...num1){
+    return num1;
 }
 
-// handleObject(user) 
+console.log(calculateCartPrice(200,400,500,2000)) //it returns an array with all the values, iterate and calculate the sum.
 
-//what if price was named as prices?
-//it gives output as total is undefined.
+const user = {
+    username : "rachit",
+    price : 999
+}
 
-//we can also pass an object to a function
-handleObject({
-    username : "itsrat17",
-    price : "299"
-}) //we can do this for arrays also.
+
 
 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachit's Space | DOM </title>
+
+</head>
+<body style = "background-color: #212121; color: #fff">
+    <ul class = "language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+ <script> 
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    } // now here was only one element in the list, but this traverses the whole ul tree, so if there were more elements, it would have took more time.
+
+    addLanguage("Python")
+    addLanguage("typeScript")
+
+    //lets make a better and optimised way
+
+    function addOptimalLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    } //this works better, does not have to traverse the whole tree.
+    addOptimalLanguage("Go-Lang")
+
+    //but how to edit these values?
+    const secondLang = document.querySelector("li:nth-child(2")
+    // secondLang.innerHTML = "Mojo" //it works but it is not optimised as inner HTML traverses the whole node by node
+    const newLi = document.createElement('li')
+    newLi.textContent = "Mojo Rojo"
+    secondLang.replaceWith(newLi) 
+
+    //edit example
+    //replace js with typescript
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>TypeScript</li>'
+
+    //to remove?
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove() //removes the element
+
+</script>
+</html>
